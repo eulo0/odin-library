@@ -1,4 +1,47 @@
-*{
-    margin: 0;
-    padding: 0;
+::backdrop{
+    filter:blur(12px);
+}
+
+#book-container{
+    margin: 20px;
+    height: 1000px; 
+    width: 1000px;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    align-content: flex-start;
+    gap: 10px;
+}
+
+.book{
+    display: flex;
+    border: 2px solid black;
+    height: 200px;
+    width: 100px;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title{
+    font: 18px;
+    color: black;
+}
+
+#add, 
+#delete,
+#close {
+    height: 3rem; 
+    width: 7rem;
+    border-radius: 5rem;
+    background: blue;
+    border: none;
+    color: white;
+}
+
+#add:hover,
+#delete:hover,
+#close:hover{
+    background: #0000D1;
 }
