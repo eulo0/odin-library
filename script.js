@@ -19,8 +19,10 @@ function Book(title, author, pageNum, hasRead){
 }
 
 function addBookToLibrary(){
-    myLibrary.push(new Book("title", "author", 123, false));
-    console.log("hi");
+    const title = document.querySelector("#title");
+    const author = document.querySelector("#author");
+    const pageNum = document.querySelector("#pages");
+    myLibrary.push(new Book(title.value, author.value, pageNum.value, false));
     displayBooks();
 }
 
@@ -30,6 +32,7 @@ function displayBooks(){
         var title = document.createElement("p");
         var author = document.createElement("p");
         var page = document.createElement("p");
+        var actionBtns = document.createElement("div")
         newBook.classList.add("book");
         title.classList.add("title");
         author.classList.add("title");

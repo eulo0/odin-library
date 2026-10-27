@@ -8,18 +8,37 @@
     <title>Library</title>
 </head>
 <body>
-    <button id="add">Add</button>
-    <button id="delete">Delete All</button>
-    <dialog>
-        <button id="close" autofocus>Close</button>
-        <label for="title">Title</label>
-        <input type="text" id="title">
-        <label for="author">Author</label>
-        <input type="author" id="author">
-        <label for="pages">Pages</label>
-        <input type="number" id="pages">
-        <button id="submit" type="submit">Add</button>
-    </dialog>
-    <div id="book-container"></div>
+    <div class="header">
+        <div class="logo">
+            <img src="icons/book-open-variant.svg" class="icon">
+            <p class="project-title">Library</p>
+        </div>
+        <div class="header-btns">
+            <button id="add">Add</button>
+            <button id="delete">Delete All</button>
+        </div>
+        <dialog class="modal">
+            <button id="close" autofocus>Close</button>
+            <label for="title">Title</label>
+            <input type="text" id="title">
+            <label for="author">Author</label>
+            <input type="author" id="author">
+            <label for="pages">Pages</label>
+            <input type="number" id="pages">
+            <button id="submit" type="submit">Add</button>
+        </dialog>
+    </div>
+    <div id="book-container">
+        <div class="book">
+            <p>Title</p>
+            <p>Author</p>
+            <p>123</p>
+            <div class="action-btns">
+                <button id="hasRead"><img src="icons/book-open-variant.svg"></button>
+                <button id="edit"><img src="icons/pencil.svg"></button>
+                <button id="delete2"><img src="icons/trash-can.svg"></button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
