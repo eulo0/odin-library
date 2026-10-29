@@ -3,18 +3,27 @@
     padding: 0;
 }
 
+.body{
+    background: lightgray;
+}
+
+.modal{
+    margin: auto;
+}
+
 .modal::backdrop{
     backdrop-filter:blur(10px);
 }
 
 #book-container{
     margin: 1.25rem auto;
+    padding: 2rem auto;
     display: flex;
     flex-wrap: wrap;
     width: 90%;
     max-width: 80vw;
     min-height: 85vh;
-    border: 2px solid black;
+    border: 0.2rem solid black;
     border-radius: 1.25rem;
     align-content: flex-start;
     gap: 1.25rem;
@@ -22,62 +31,67 @@
 
 .book{
     display: flex;
-    border: 2px solid black;
-    height: 200px;
-    width: 100px;
-    margin: 20px;
-    align-items: center;
-    justify-content: center;
+    padding: 1rem;
+    margin: 1rem;
+    border: 0.1rem solid black;
+    min-height: 20vh;
+    /* align-items: center; */
     flex-direction: column;
+    justify-content: space-around;
+    gap: 0.5rem;
+}
+
+.book text{
+    text-overflow: ellipsis;
 }
 
 .title{
-    font: 18px;
+    font: 1.25rem;
     color: black;
 }
 
 .action-btns{
     display: flex;
-    height: 200px;
+    max-height:10vh;
 }
 
 #add, 
-#delete,
+#deleteAll,
 #close {
     height: 3rem; 
     width: 7rem;
     border-radius: 5rem;
-    background: blue;
+    background: white;
     border: none;
-    color: white;
+    color: black;
 }
 
 #add:hover,
-#delete:hover,
+#deleteAll:hover,
 #close:hover{
-    background: #0000D1;
+    background: #C9C9C9;
 }
 
-#hasRead,
-#edit,
-#delete2{
+.hasRead,
+.edit,
+.delete{
     display: inline-block;
-    width: 30px;
-    height: 20px;
-    text-align: center;
+    width: 2rem;
+    height: 1.2rem;
+    padding: 0.1rem;
 }
 
-.imageButton{
-    height: 20px;
-    width: 20px;
+.imageBtn{
+    height: 1.2rem;
+    width: 1.2rem;
 }
 
 .header{
     display: grid;
-    grid-template-columns: 2rem 2fr auto 2fr 2rem;
+    grid-template-columns: 2vw 2fr auto 0.5fr 2vw;
     width: 100%; 
     min-height: 10vh;
-    background: red;
+    background: #DA3122;
     padding: 0;
     margin: 0;
     align-items: center;
@@ -103,4 +117,18 @@
 
 .header-btns{
     grid-column: 4;
+}
+
+.footer{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    background-color: darkslategray;
+}
+
+.footer-text{
+    color: white;
+    font-weight: normal;
 }

@@ -1,11 +1,15 @@
 const myLibrary = [];
 const addBtn = document.getElementById("add");
-const deleteBtn = document.getElementById("delete")
+const deleteAllBtn = document.getElementById("deleteAll")
 const closeBtn = document.getElementById("close")
 const submitBtn = document.getElementById("submit")
 
 const bookContainer = document.getElementById("book-container");
 const dialog = document.querySelector("dialog");
+
+const deleteBtn = document.getElementById("delete");
+const hasRead = document.getElementById("hasRead");
+const edit = document.getElementById("edit");
 
 function Book(title, author, pageNum, hasRead){
     if (!new.target) {
@@ -33,6 +37,27 @@ function displayBooks(){
         var author = document.createElement("p");
         var page = document.createElement("p");
         var actionBtns = document.createElement("div")
+        var hasRead = document.createElement("button");
+        var edit = document.createElement("button");
+        var del = document.createElement("button");
+        hasRead.classList.add("hasRead");
+        edit.classList.add("edit");
+        del.classList.add("delete");
+        actionBtns.classList.add("action-btns");
+
+        actionBtns.append(hasRead);
+        actionBtns.append(edit);
+        actionBtns.append(del);
+
+        var deleteImg = document.createElement("img");
+        deleteImg.src = "icons/trash-can.svg";
+        deleteImg.classList.add("imageBtn");
+
+        del.append(deleteImg);
+
+        del.addEventListener("click", () => {
+        });
+
         newBook.classList.add("book");
         title.classList.add("title");
         author.classList.add("title");
@@ -43,6 +68,7 @@ function displayBooks(){
         newBook.append(title);
         newBook.append(author);
         newBook.append(page);
+        newBook.append(actionBtns);
         console.log(author);
         bookContainer.append(newBook);
     }
@@ -52,7 +78,7 @@ addBtn.addEventListener("click", () => {
     dialog.showModal();
 });
 
-deleteBtn.addEventListener("click", () => {
+deleteAllBtn.addEventListener("click", () => {
     myLibrary.length = 0;
     bookContainer.textContent = "";
     displayBooks();
@@ -67,6 +93,8 @@ submitBtn.addEventListener("click", () => {
     addBookToLibrary();
     dialog.close();
 });
+
+
 
 // addBookToLibrary();
 // displayBooks();
