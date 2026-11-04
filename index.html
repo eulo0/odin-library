@@ -18,29 +18,25 @@
             <button id="deleteAll">Delete All</button>
         </div>
         <dialog class="modal">
-            <button id="close" autofocus>Close</button>
-            <label for="title">Title</label>
-            <input type="text" id="title">
-            <label for="author">Author</label>
-            <input type="author" id="author">
-            <label for="pages">Pages</label>
-            <input type="number" id="pages">
+            <div class="header-modal">
+                <button id="close" autofocus>X</button>
+            </div>
+            <div class="modal-entry">
+                <label for="title">Title</label>
+                <input type="text" id="title">
+            </div>
+            <div class="modal-entry">
+                <label for="author">Author</label>
+                <input type="author" id="author">
+            </div>
+            <div class="modal-entry">
+                <label for="pages">Pages</label>
+                <input type="number" id="pages">
+            </div>
             <button id="submit" type="submit">Add</button>
         </dialog>
     </div>
     <div id="book-container">
-        <div class="book">
-            <p class="book-text">Title</p>
-            <p class="book-text">Author</p>
-            <p class="book-text">123</p>
-            <!--
-            <div class="action-btns">
-                <button class="hasRead"><img src="icons/book-open-variant.svg" class="imageBtn"></button>
-                <button class="edit"><img src="icons/pencil.svg" class="imageBtn"></button>
-                <button class="delete"><img src="icons/trash-can.svg" class="imageBtn"></button>
-            </div>
-            -->
-        </div>
     </div>
     <div class="footer">
         <p class="footer-text">Copyright @ Odin Project 2021</p>
