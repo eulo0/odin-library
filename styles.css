@@ -93,7 +93,7 @@
     background: #C9C9C9;
 }
 
-.hasRead,
+.status,
 .edit,
 .delete{
     display: flex;
@@ -103,12 +103,16 @@
     height: 1.2rem;
 }
 
-.hasRead-true{
-    background: lightgreen;
+.status-backlog{
+    background: red;
 }
 
-.hasRead-false{
-    background: red;
+.status-in-progress{
+    background: yellow;
+}
+
+.status-finished{
+    background: lightgreen;
 }
 
 .imageBtn{
@@ -185,13 +189,23 @@
 }
 
 #submit{
-    margin-top: 2rem;
+    display: block;
+    margin: 0.8rem auto 0.8rem;
     height: 2.5rem; 
-    width: 100%;
+    width: 90%;
     background: red;
     border: none;
     color: white;
-    border-top: 2px solid black;
+    border: 2px solid black;
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#submit:hover{
+    background: #B50000;
 }
 
 label{
@@ -202,14 +216,20 @@ label{
 
 input,
 select{
+    display: flex;
+    align-self: center;
     margin: 0.6rem;
     border-radius: 1rem;
-    height: 1.4rem;
+    height: 1.5rem;
     border: 2px solid darkgray;
+    width: 40%;
+    text-align: center;
+    font-size: 1rem;
 }
 
 .banner-picker{
     border:none;
     align-self: center;
-    width: 80%;
+    width: 40%;
+    height: 2rem;
 }
