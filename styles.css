@@ -9,6 +9,9 @@
 
 .modal{
     margin: auto;
+    width: 50%;
+    border-radius: 1rem;
+    border: 2px solid black;
 }
 
 .modal::backdrop{
@@ -17,31 +20,46 @@
 
 #book-container{
     margin: 1.25rem auto;
-    padding: 2rem auto;
-    display: flex;
-    flex-wrap: wrap;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 9rem);
     width: 90%;
     max-width: 80vw;
     min-height: 85vh;
     border: 0.2rem solid black;
     border-radius: 1.25rem;
+    justify-content: space-evenly;
     align-content: flex-start;
     gap: 1.25rem;
 }
 
 .book{
-    display: flex;
-    padding: 1rem;
-    margin: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
     border: 0.1rem solid black;
-    min-height: 20vh;
+    height: 11rem;
+    width: 9rem;
     flex-direction: column;
     justify-content: space-around;
     gap: 0.5rem;
+    overflow: hidden;
 }
 
 .book text{
+    grid-column: 2;
     text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.book-banner{
+    grid-column: 1;
+}
+
+.book-info{
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .title{
@@ -52,17 +70,21 @@
 .action-btns{
     display: flex;
     max-height:10vh;
+    grid-column: 2;
 }
 
-#add, 
+#add,
 #deleteAll,
 #close {
-    height: 3rem; 
-    width: 7rem;
+    height: 3rem;
+    padding: 0 1.5rem; 
+    min-width: 5rem;
+    white-space: nowrap;
     border-radius: 5rem;
     background: white;
     border: none;
     color: black;
+    margin-right: 0.3rem;
 }
 
 #add:hover,
@@ -148,7 +170,7 @@
     display: flex; 
     justify-content: flex-end;
     box-shadow: 0 6px 2px -2px lightgray;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 #close{
@@ -157,11 +179,37 @@
     font-size: 1.5rem;
 }
 
-#close:hover{
-
-}
-
 .modal-entry{
     display: flex;
     flex-direction: column;
+}
+
+#submit{
+    margin-top: 2rem;
+    height: 2.5rem; 
+    width: 100%;
+    background: red;
+    border: none;
+    color: white;
+    border-top: 2px solid black;
+}
+
+label{
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+input,
+select{
+    margin: 0.6rem;
+    border-radius: 1rem;
+    height: 1.4rem;
+    border: 2px solid darkgray;
+}
+
+.banner-picker{
+    border:none;
+    align-self: center;
+    width: 80%;
 }

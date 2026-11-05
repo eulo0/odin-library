@@ -9,7 +9,7 @@ const dialog = document.querySelector("dialog");
 
 var editedBook = null;
 
-function Book(title, author, pageNum, hasRead){
+function Book(title, author, pageNum, hasRead, color){
     if (!new.target) {
         throw Error("You must use the 'new operator to call the constructor");
     }
@@ -18,6 +18,7 @@ function Book(title, author, pageNum, hasRead){
     this.pageNum = pageNum; 
     this.hasRead = hasRead; 
     this.id = crypto.randomUUID();
+    this.color = color;
 }
 
 // creates a book after submitting the form
@@ -25,7 +26,8 @@ function addBookToLibrary(){
     const title = document.querySelector("#title");
     const author = document.querySelector("#author");
     const pageNum = document.querySelector("#pages");
-    myLibrary.push(new Book(title.value, author.value, pageNum.value, false));
+    const color = document.querySelector("#banner");
+    myLibrary.push(new Book(title.value, author.value, pageNum.value, false, color.value));
     displayBooks();
 }
 
@@ -41,10 +43,15 @@ function displayBooks(){
         const hasRead = document.createElement("button");
         const edit = document.createElement("button");
         const del = document.createElement("button");
+        const banner = document.createElement("div");
+        const info = document.createElement("div");
+
         hasRead.classList.add("hasRead");
         edit.classList.add("edit");
         del.classList.add("delete");
         actionBtns.classList.add("action-btns");
+        banner.classList.add("book-banner");
+        info.classList.add("book-info");
 
         actionBtns.append(hasRead);
         actionBtns.append(edit);
@@ -97,13 +104,17 @@ function displayBooks(){
         title.classList.add("title");
         author.classList.add("title");
         page.classList.add("title");
-        title.textContent = "Title: " + book.title;
-        author.textContent = "Author: " + book.author; 
+        title.textContent = book.title;
+        author.textContent = "By: " + book.author; 
         page.textContent = "Pages: " + book.pageNum;
-        newBook.append(title);
-        newBook.append(author);
-        newBook.append(page);
-        newBook.append(actionBtns);
+        banner.style.backgroundColor = book.color;
+        info.append(title);
+        info.append(author);
+        info.append(page);
+        info.append(actionBtns);
+
+        newBook.append(banner);
+        newBook.append(info);
         bookContainer.append(newBook);
     }
 }
