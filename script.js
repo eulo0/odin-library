@@ -13,27 +13,26 @@ const statusMap = { "Backlog": "status-backlog",
                     "In Progress": "status-in-progress",
                     "Finished": "status-finished" };
 
-function Book(title, author, pageNum, status, color){
+function Book(title, author, pages, status, color){
     if (!new.target) {
         throw Error("You must use the 'new operator to call the constructor");
     }
     this.title = title;
     this.author = author; 
-    this.pageNum = pageNum; 
+    this.pages = pages; 
     this.status = status; 
     this.id = crypto.randomUUID();
     this.color = color;
-    console.log(status);
 }
 
 // creates a book after submitting the form
 function addBookToLibrary(){
     const title = document.querySelector("#title");
     const author = document.querySelector("#author");
-    const pageNum = document.querySelector("#pages");
+    const pages = document.querySelector("#pages");
     const color = document.querySelector("#banner");
     const status= document.querySelector("#status");
-    myLibrary.push(new Book(title.value, author.value, pageNum.value, status.value, color.value));
+    myLibrary.push(new Book(title.value, author.value, pages.value, status.value, color.value));
     displayBooks();
 }
 
@@ -88,24 +87,11 @@ function displayBooks(){
         edit.append(editImg);
         del.append(deleteImg);
 
-        status.addEventListener("click", () => {
-            if (book.status){
-                book.status = false;
-                status.classList.remove("status-true");
-                status.classList.add("status-false");
-            } 
-            else{
-                book.status = true;
-                status.classList.remove("status-false");
-                status.classList.add("status-true");
-            }
-        });
-
         edit.addEventListener("click", () => {
            editedBook = book;
            document.querySelector("#title").value = book.title;
            document.querySelector("#author").value = book.author;
-           document.querySelector("#pages").value = book.pageNum;
+           document.querySelector("#pages").value = book.pages;
            dialog.showModal();
         });
 
@@ -121,7 +107,7 @@ function displayBooks(){
         page.classList.add("title");
         title.textContent = book.title;
         author.textContent = "By: " + book.author; 
-        page.textContent = "Pages: " + book.pageNum;
+        page.textContent = "Pages: " + book.pages;
         banner.style.backgroundColor = book.color;
         status.classList.add(statusMap[book.status]);
         info.append(title);
@@ -136,7 +122,6 @@ function displayBooks(){
 }
 
 // Button Functions 
-
 addBtn.addEventListener("click", () => {
     editedBook = null;
     document.querySelector("#title").value = "";

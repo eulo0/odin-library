@@ -23,7 +23,7 @@
     padding: 2rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, 9rem);
-    width: 90%;
+    width: 70%;
     max-width: 80vw;
     min-height: 85vh;
     border: 0.2rem solid black;
@@ -35,7 +35,7 @@
 
 .book{
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr minmax(0,5fr);
     border: 0.1rem solid black;
     height: 11rem;
     width: 9rem;
@@ -65,6 +65,8 @@
 .title{
     font: 1.25rem;
     color: black;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .action-btns{
@@ -121,13 +123,12 @@
 }
 
 .header{
-    display: grid;
-    grid-template-columns: 2vw 2fr auto 1fr 1vw;
-    width: 100%; 
-    min-height: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     background: #DA3122;
-    padding: 0;
-    margin: 0;
+    padding: 1rem 2rem;
     align-items: center;
 }
 
