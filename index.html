@@ -18,34 +18,36 @@
             <button id="deleteAll">Delete All</button>
         </div>
         <dialog class="modal">
-            <div class="header-modal">
-                <button id="close" autofocus>X</button>
-            </div>
-            <div class="modal-entry">
-                <label for="title">Title</label>
-                <input type="text" id="title">
-            </div>
-            <div class="modal-entry">
-                <label for="author">Author</label>
-                <input type="author" id="author">
-            </div>
-            <div class="modal-entry">
-                <label for="pages">Pages</label>
-                <input type="number" id="pages">
-            </div>
-            <div class="modal-entry">
-                <label for="status">Status</label>
-                <select name="Status" id="status">
-                    <option value="Backlog">Backlog</option>
-                    <option value="In Progress">In Progress</option>
-                    <option value="Finished">Completed</option>
-                </select>
-            </div>
-            <div class="modal-entry">
-                <label for="banner">Banner Color</label>
-                <input type="color" id="banner" name="banner" value="#D3D3D3" class="banner-picker"/>
-            </div>
-            <button id="submit" type="submit">Submit</button>
+            <form id="form"> 
+                <div class="header-modal">
+                    <button id="close" autofocus type="button">X</button>
+                </div>
+                <div class="modal-entry">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" required>
+                    </div>
+                    <div class="modal-entry">
+                        <label for="author">Author</label>
+                        <input type="author" id="author" required>
+                    </div>
+                    <div class="modal-entry">
+                        <label for="pages">Pages</label>
+                        <input type="number" id="pages" required>
+                    </div>
+                    <div class="modal-entry">
+                        <label for="status">Status</label>
+                        <select name="Status" id="status" required>
+                            <option value="Backlog">Backlog</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Finished">Completed</option>
+                        </select>
+                    </div>
+                    <div class="modal-entry">
+                        <label for="banner">Banner Color</label>
+                        <input type="color" id="banner" name="banner" value="#D3D3D3" class="banner-picker" required/>
+                    </div>
+                    <button id="submit" type="submit">Submit</button>
+                </form>
         </dialog>
     </div>
     <div id="book-container">

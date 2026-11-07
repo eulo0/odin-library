@@ -6,6 +6,7 @@ const submitBtn = document.getElementById("submit")
 
 const bookContainer = document.getElementById("book-container");
 const dialog = document.querySelector("dialog");
+const form = document.getElementById("form");
 
 var editedBook = null;
 
@@ -142,7 +143,8 @@ closeBtn.addEventListener("click", () => {
     dialog.close();
 });
 
-submitBtn.addEventListener("click", () => {
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
     if (editedBook == null){
         addBookToLibrary();
     }
