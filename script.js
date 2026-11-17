@@ -14,16 +14,55 @@ const statusMap = { "Backlog": "status-backlog",
                     "In Progress": "status-in-progress",
                     "Finished": "status-finished" };
 
-function Book(title, author, pages, status, color){
-    if (!new.target) {
-        throw Error("You must use the 'new operator to call the constructor");
+class Book{
+    constructor(title, author, pages, status, color){
+        this._title = title;
+        this._author = author; 
+        this._pages = pages; 
+        this._status = status; 
+        this._id = crypto.randomUUID();
+        this._color = color;
     }
-    this.title = title;
-    this.author = author; 
-    this.pages = pages; 
-    this.status = status; 
-    this.id = crypto.randomUUID();
-    this.color = color;
+
+    get title() {
+        return this._title;
+    }
+
+    get author(){
+        return this._author;
+    }
+
+    get pages(){
+        return this._pages;
+    }
+
+    get id(){
+        return this._id;
+    }
+
+    get status(){
+        return this._status;
+    }
+
+    get color(){
+        return this._color;
+    }
+
+    set title(title) {
+        this._title = title;
+    }
+
+    set author(author){
+        this._author = author;
+    }
+
+    set pages(pages){
+        this._pages = pages;
+    }
+
+    set color(color){
+        this._color = color;
+    }    
 }
 
 // creates a book after submitting the form
